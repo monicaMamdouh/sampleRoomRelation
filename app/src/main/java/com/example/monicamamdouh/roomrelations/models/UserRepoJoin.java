@@ -23,8 +23,8 @@ public class UserRepoJoin {
     public int userId;
     public int repoId;
 
-//    public UserRepoJoin( int userId,  int repoId) {
-//        this.userId = userId;
-//        this.repoId = repoId;
-//    }
+    public UserRepoJoin( int userId,  int repoId) {
+        this.userId = userId;
+        this.repoId = repoId;
+    }
 }
