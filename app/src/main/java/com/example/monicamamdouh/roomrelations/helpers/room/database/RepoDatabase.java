@@ -14,7 +14,7 @@ import com.example.monicamamdouh.roomrelations.models.UserRepoJoin;
 
 
 @Database(entities = {Repo.class, User.class, UserRepoJoin.class},
-        version = 42)
+        version = 47)
 public abstract class RepoDatabase extends RoomDatabase {
 
     private static final String DB_NAME = "repoDatabase.db";
@@ -35,9 +35,10 @@ public abstract class RepoDatabase extends RoomDatabase {
     }
 
     public abstract RepoDao getRepoDao();
-    public abstract UserDao getUserDao();
-    public abstract UserRepoJoinDao getUserRepoJoinDao();
 
+    public abstract UserDao getUserDao();
+
+    public abstract UserRepoJoinDao getUserRepoJoinDao();
 
 
 }

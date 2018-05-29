@@ -10,6 +10,7 @@ import com.example.monicamamdouh.roomrelations.helpers.room.Dao.UserRepoJoinDao;
 import com.example.monicamamdouh.roomrelations.helpers.room.database.RepoDatabase;
 import com.example.monicamamdouh.roomrelations.models.Repo;
 import com.example.monicamamdouh.roomrelations.models.User;
+import com.example.monicamamdouh.roomrelations.models.UserRepoJoin;
 
 import java.util.List;
 
@@ -34,14 +35,14 @@ public class MainActivity extends AppCompatActivity {
         // insertUser();
         // insetRepository();
         // deleteRepos();
-        //getUsers();
+        // getUsers();
         //updatedUser();
         //getUserRepository();
 
         //_______________________________many to many___________________________
 
-      //  insertManyToMany();
-       // getManyToMany();
+        //insertManyToMany();
+        //getManyToMany();
         getManyToManyUser();
 
 
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         manyToManyInsertAsyncTask.execute();
     }
 
-    private AsyncTask<Void, Void, List<Repo>> manyToManyGetAsyncTask = new AsyncTask<Void, Void, List<Repo>>() {
+    AsyncTask<Void, Void, List<Repo>> manyToManyGetAsyncTask = new AsyncTask<Void, Void, List<Repo>>() {
         @Override
         protected List<Repo> doInBackground(Void... voids) {
 
@@ -119,10 +120,10 @@ public class MainActivity extends AppCompatActivity {
                     "ee",
                     "https://github.com/square/retrofit", 2));
 
-//            userRepoJoinDao.insert(new UserRepoJoin(1, 1));
-//            userRepoJoinDao.insert(new UserRepoJoin(2, 1));
-//
-//            userRepoJoinDao.insert(new UserRepoJoin(3, 1));
+            userRepoJoinDao.insert(new UserRepoJoin(1, 1));
+            userRepoJoinDao.insert(new UserRepoJoin(2, 1));
+
+            userRepoJoinDao.insert(new UserRepoJoin(3, 1));
 
 
             return null;
@@ -146,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
         repositoryDeleteAsyncTask.execute();
     }
 
-    private AsyncTask<Void, Void, Void> userAsyncTask = new AsyncTask<Void, Void, Void>() {
+    private AsyncTask<Void, Void, Void> userAsyncTask = new  AsyncTask<Void, Void, Void>() {
         @Override
         protected Void doInBackground(Void... voids) {
             userDao.insert(new User(2,
